@@ -12,5 +12,6 @@ Personal project portfolio — Senior Data Engineer working across AI/ML infrast
 - [AI Feature Store for Crypto Analytics](projects/ai-feature-store.md) — Snowflake, Hopsworks, dbt, AI Agent
 - [Web3 Full Stack — RWA Lending Protocol](projects/rwa-lending-protocol.md) — Solidity, Go, Next.js, Multi-Chain
 - [Crypto Market Surveillance ETL Pipeline](projects/market-surveillance-pipeline.md) — Airflow, Iceberg, Redshift
+- [Crypto Tax Calculation Pipeline](projects/crypto-tax-pipeline.md) — Dagster, Iceberg, Redshift, PostgreSQL
 - [Vehicle Data ETL Pipeline](projects/vehicle-data-pipeline.md) — Spark Streaming, Kafka, Protobuf
 - [Robotic Orchestrator](projects/robotic-orchestrator.md) — AWS Lambda, Greengrass, MQTT, IoT, CDK
