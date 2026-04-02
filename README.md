@@ -13,3 +13,4 @@ Personal project portfolio — Senior Data Engineer working across AI/ML infrast
 - [Web3 Full Stack — RWA Lending Protocol](projects/rwa-lending-protocol.md) — Solidity, Go, Next.js, Multi-Chain
 - [Crypto Market Surveillance ETL Pipeline](projects/market-surveillance-pipeline.md) — Airflow, Iceberg, Redshift
 - [Vehicle Data ETL Pipeline](projects/vehicle-data-pipeline.md) — Spark Streaming, Kafka, Protobuf
+- [Robotic Orchestrator](projects/robotic-orchestrator.md) — AWS Lambda, Greengrass, MQTT, IoT, CDK
