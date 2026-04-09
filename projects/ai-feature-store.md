@@ -1,7 +1,7 @@
-# AI Feature Store for Crypto Analytics
+# ML Feature Store for Quantitative Analytics
 
 **Timeline:** May 2025 - Aug 2025
-**Stack:** Python, dbt, Snowflake, Y42, Hopsworks, LangChain
+**Stack:** Python, dbt, Snowflake, Snowflake Cortex, Y42, Hopsworks
 
 ## Overview
 
@@ -29,7 +29,7 @@ Python SDK        AI Agent
 
 - **Medallion architecture:** Applied bronze/silver/gold layering via dbt to enforce data quality contracts at each stage. Raw ingestion stays untouched in bronze; silver handles deduplication and type casting; gold serves curated, business-ready features.
 - **Hopsworks for feature serving:** Chose Hopsworks over Feast for its native Snowflake integration and built-in feature monitoring. Wrapped access in a custom Python SDK to provide standardized DataFrame interfaces.
-- **AI agent for data exploration:** Built a natural-language query agent backed by Snowflake, allowing non-technical stakeholders to ask questions about external-facing datasets without writing SQL.
+- **Snowflake native agent for data exploration:** Built a natural-language query agent using Snowflake Cortex, allowing non-technical stakeholders to ask questions about external-facing datasets without writing SQL.
 - **Y42 for orchestration:** Used Y42 as the orchestration layer on top of dbt, managing periodic refresh schedules across all 90+ feature tables.
 
 ## Results

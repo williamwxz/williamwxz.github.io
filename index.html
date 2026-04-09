@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>William Zhang | Senior Data Engineer &mdash; Projects</title>
-  <meta name="description" content="Project portfolio of a Senior Data Engineer specializing in AI/ML infrastructure, blockchain data systems, and real-time streaming pipelines.">
-  <meta name="keywords" content="Senior Data Engineer, AI, Machine Learning, Blockchain, DeFi, Kafka, Spark, ClickHouse, Rust, Python, Kubernetes, AWS, Solidity, Real-Time Pipelines, Data Warehouse, Web3, Feature Store">
+  <title>William Zhang | Data Infrastructure Engineer &mdash; Projects</title>
+  <meta name="description" content="Project portfolio of a Data Infrastructure Engineer specializing in real-time streaming, ML feature stores, scalable data platforms, and cloud-native warehousing.">
+  <meta name="keywords" content="Data Infrastructure Engineer, ML Feature Store, Kafka, Spark, ClickHouse, StarRocks, Hopsworks, Rust, Python, Kubernetes, AWS, Real-Time Pipelines, Data Warehouse, DeFi, Blockchain">
   <meta name="author" content="Weixin (William) Zhang">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="William Zhang | Project Portfolio">
-  <meta property="og:description" content="Senior Data Engineer building at the intersection of AI and Web3. Projects in real-time data pipelines, ML feature stores, and DeFi protocols.">
+  <meta property="og:title" content="William Zhang | Data Infrastructure Portfolio">
+  <meta property="og:description" content="Data Infrastructure Engineer building ML feature stores, real-time streaming pipelines, and scalable data platforms.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://williamwxz.github.io">
 
@@ -20,17 +20,16 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Weixin (William) Zhang",
-    "jobTitle": "Senior Data Engineer",
+    "jobTitle": "Data Infrastructure Engineer",
     "url": "https://williamwxz.github.io",
     "sameAs": [
       "https://github.com/williamwxz"
     ],
     "knowsAbout": [
-      "Data Engineering", "AI/ML Infrastructure", "Blockchain Analytics",
-      "Real-Time Streaming", "Apache Kafka", "Apache Spark", "ClickHouse",
-      "Rust", "Python", "Kubernetes", "AWS", "Solidity", "DeFi",
-      "Data Warehousing", "ETL Pipelines", "dbt", "Dagster", "Airflow",
-      "Feature Store", "Web3", "Smart Contracts"
+      "Data Infrastructure", "ML Feature Stores", "Real-Time Streaming",
+      "Apache Kafka", "Apache Spark", "ClickHouse", "StarRocks", "Hopsworks",
+      "Rust", "Python", "Kubernetes", "AWS", "Data Warehousing", "ETL Pipelines",
+      "dbt", "Dagster", "Airflow", "Blockchain Analytics", "DeFi"
     ]
   }
   </script>
@@ -263,7 +262,7 @@
 <header>
   <div class="container">
     <h1>William Zhang</h1>
-    <div class="tagline">Senior Data Engineer &mdash; AI &amp; Web3</div>
+    <div class="tagline">Data Infrastructure Engineer</div>
     <div class="contact-row">
       <a href="https://github.com/williamwxz" target="_blank" rel="noopener">GitHub</a>
       <span>&middot;</span>
@@ -279,8 +278,8 @@
     <section id="about">
       <h2>About</h2>
       <div class="about">
-        I build data platforms at the intersection of AI and Web3 &mdash; real-time streaming systems,
-        ML feature stores, on-chain analytics, and DeFi protocol infrastructure.
+        I build data infrastructure at scale &mdash; real-time streaming systems,
+        ML feature stores, cloud-native data lakes, and DeFi protocol data platforms.
         This page is a collection of projects I've worked on.
       </div>
     </section>
@@ -288,6 +287,70 @@
     <!-- PROJECTS -->
     <section id="projects">
       <h2>Projects</h2>
+
+      <a class="project-card" href="projects/ai-feature-store.md">
+        <div class="project-header">
+          <div class="project-title">ML Feature Store for Quantitative Analytics</div>
+          <div class="project-dates">May 2025 &ndash; Aug 2025</div>
+        </div>
+        <p class="project-desc">
+          Centralized ML feature store serving 90+ features to data scientists via Hopsworks, Snowflake, and a standardized Python SDK.
+          Built a Snowflake native agent for natural-language data exploration, reducing ad-hoc request turnaround from hours to seconds.
+        </p>
+        <div class="project-tags">
+          <span class="tag ai">AI/ML</span>
+          <span class="tag ai">Feature Store</span>
+          <span class="tag">Snowflake Cortex</span>
+          <span class="tag">Hopsworks</span>
+          <span class="tag">Snowflake</span>
+          <span class="tag">dbt</span>
+          <span class="tag">Python</span>
+        </div>
+        <div class="read-more">Read architecture details</div>
+      </a>
+
+      <a class="project-card" href="projects/defi-smart-contract-pipeline.md">
+        <div class="project-header">
+          <div class="project-title">DeFi Smart Contract Data Pipeline</div>
+          <div class="project-dates">Feb 2025 &ndash; Jun 2025</div>
+        </div>
+        <p class="project-desc">
+          Real-time smart contract event capture across all EVM chains via Rust WebSocket service,
+          streaming 1MB/s into Kafka, BigQuery, and ClickHouse. Extensible connector framework
+          with AI-assisted code generation via Claude.
+        </p>
+        <div class="project-tags">
+          <span class="tag web3">EVM Chains</span>
+          <span class="tag web3">Morpho</span>
+          <span class="tag">Rust</span>
+          <span class="tag">Kafka</span>
+          <span class="tag">BigQuery</span>
+          <span class="tag">ClickHouse</span>
+          <span class="tag">Dagster</span>
+        </div>
+        <div class="read-more">Read architecture details</div>
+      </a>
+
+      <a class="project-card" href="projects/crypto-realtime-pipeline.md">
+        <div class="project-header">
+          <div class="project-title">Crypto Exchange Batch &amp; Real-Time Pipeline</div>
+          <div class="project-dates">Nov 2025 &ndash; Mar 2026</div>
+        </div>
+        <p class="project-desc">
+          High-throughput Rust ingestion service publishing 300GB+/day to Kafka, with StarRocks on Kubernetes for real-time OLAP.
+          Dagster orchestrates backfills from Binance/Amberdata and ETL across medallion architecture. Migrated from Redshift to S3 Glacier, cutting infrastructure costs.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Rust</span>
+          <span class="tag">Kafka</span>
+          <span class="tag">StarRocks</span>
+          <span class="tag">Dagster</span>
+          <span class="tag">S3 Glacier</span>
+          <span class="tag">EKS</span>
+          <span class="tag">Grafana</span>
+        </div>
+        <div class="read-more">Read architecture details</div>
+      </a>
 
       <a class="project-card" href="projects/kamino-solana-vault.md">
         <div class="project-header">
@@ -305,69 +368,6 @@
           <span class="tag">Bun</span>
           <span class="tag">Dagster</span>
           <span class="tag">GCP KMS</span>
-        </div>
-        <div class="read-more">Read architecture details</div>
-      </a>
-
-      <a class="project-card" href="projects/defi-smart-contract-pipeline.md">
-        <div class="project-header">
-          <div class="project-title">DeFi Smart Contract Data Pipeline</div>
-          <div class="project-dates">Feb 2025 &ndash; Jun 2025</div>
-        </div>
-        <p class="project-desc">
-          Real-time smart contract event capture across all EVM chains via Rust WebSocket service,
-          streaming 1MB/s into Kafka, BigQuery, and ClickHouse. AI-assisted extensibility with Claude.
-        </p>
-        <div class="project-tags">
-          <span class="tag web3">EVM Chains</span>
-          <span class="tag web3">Morpho</span>
-          <span class="tag ai">AI Agent</span>
-          <span class="tag">Rust</span>
-          <span class="tag">Kafka</span>
-          <span class="tag">BigQuery</span>
-          <span class="tag">ClickHouse</span>
-        </div>
-        <div class="read-more">Read architecture details</div>
-      </a>
-
-      <a class="project-card" href="projects/crypto-realtime-pipeline.md">
-        <div class="project-header">
-          <div class="project-title">Crypto Exchange Batch &amp; Real-Time Pipeline</div>
-          <div class="project-dates">Nov 2025 &ndash; Mar 2026</div>
-        </div>
-        <p class="project-desc">
-          High-throughput Rust ingestion service publishing 300GB+/day to Kafka, with ClickHouse for real-time OLAP
-          and Dagster orchestrating 20TB+ historical backfills. 60% latency reduction over batch-only approach.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Rust</span>
-          <span class="tag">Kafka</span>
-          <span class="tag">ClickHouse</span>
-          <span class="tag">Dagster</span>
-          <span class="tag">EKS</span>
-          <span class="tag">Grafana</span>
-          <span class="tag web3">Crypto</span>
-        </div>
-        <div class="read-more">Read architecture details</div>
-      </a>
-
-      <a class="project-card" href="projects/ai-feature-store.md">
-        <div class="project-header">
-          <div class="project-title">AI Feature Store for Crypto Analytics</div>
-          <div class="project-dates">May 2025 &ndash; Aug 2025</div>
-        </div>
-        <p class="project-desc">
-          Centralized ML feature store serving 90+ features via Hopsworks and Snowflake. Built a Python SDK for
-          standardized access and an AI agent for natural-language data querying.
-        </p>
-        <div class="project-tags">
-          <span class="tag ai">AI/ML</span>
-          <span class="tag ai">Feature Store</span>
-          <span class="tag">dbt</span>
-          <span class="tag">Snowflake</span>
-          <span class="tag">Hopsworks</span>
-          <span class="tag">Python</span>
-          <span class="tag web3">Crypto</span>
         </div>
         <div class="read-more">Read architecture details</div>
       </a>
@@ -435,7 +435,7 @@
 
       <a class="project-card" href="projects/vehicle-data-pipeline.md">
         <div class="project-header">
-          <div class="project-title">Vehicle Data ETL Pipeline</div>
+          <div class="project-title">Autonomous Driving Data Pipeline</div>
           <div class="project-dates">Dec 2021 &ndash; May 2022</div>
         </div>
         <p class="project-desc">
@@ -454,7 +454,7 @@
 
       <a class="project-card" href="projects/robotic-orchestrator.md">
         <div class="project-header">
-          <div class="project-title">Robotic Orchestrator (Amazon)</div>
+          <div class="project-title">Robotic Orchestrator</div>
           <div class="project-dates">Nov 2019 &ndash; Feb 2021</div>
         </div>
         <p class="project-desc">
@@ -503,21 +503,7 @@
             <span class="skill-tag">BigQuery</span>
             <span class="skill-tag">Iceberg</span>
             <span class="skill-tag">Hopsworks</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-category">Web3</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Ethereum</span>
-            <span class="skill-tag">Solidity</span>
-            <span class="skill-tag">Arbitrum</span>
-            <span class="skill-tag">Base</span>
-            <span class="skill-tag">BSC</span>
-            <span class="skill-tag">Solana</span>
-            <span class="skill-tag">Kamino</span>
-            <span class="skill-tag">Morpho</span>
-            <span class="skill-tag">On-Chain Analytics</span>
-            <span class="skill-tag">WebSocket RPC</span>
+            <span class="skill-tag">Snowflake Cortex</span>
           </div>
         </div>
         <div class="skill-row">

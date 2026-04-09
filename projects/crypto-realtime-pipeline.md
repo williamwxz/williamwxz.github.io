@@ -1,7 +1,7 @@
 # Crypto Exchange Batch & Real-Time Pipeline
 
 **Timeline:** Nov 2025 - Mar 2026
-**Stack:** Rust, Kafka, ClickHouse, Dagster, AWS EKS, S3, Grafana
+**Stack:** Rust, Kafka, StarRocks, ClickHouse, Dagster, AWS EKS, S3 Glacier, Grafana
 
 ## Overview
 
@@ -28,8 +28,8 @@ Exchanges (REST/WebSocket)
 
 - **Rust for ingestion:** Chose Rust over Python for the data ingestion layer to handle high-throughput, low-latency publishing to Kafka across multiple exchanges simultaneously. Achieved 99.9% uptime with minimal resource footprint.
 - **ClickHouse over Redshift:** Migrated from batch-only Redshift to ClickHouse for real-time OLAP queries. Reduced end-to-end latency by 60%.
-- **Dagster for orchestration:** Used Dagster (over Airflow) for backfilling 20TB+ of historical trading data from Amberdata, leveraging its asset-based orchestration model for better lineage tracking.
-- **Cost optimization:** Applied zstd compression and tiered S3 Glacier storage for historical data, significantly reducing long-term storage costs.
+- **Dagster for orchestration:** Used Dagster (over Airflow) to orchestrate historical backfills from Binance and Amberdata, as well as ETL pipelines across the medallion architecture (bronze/silver/gold). Leveraged asset-based orchestration for full lineage tracking.
+- **Cost optimization:** Migrated from Redshift to S3 with Glacier tiered storage for 10TB+ of historical data, drastically reducing infrastructure costs while maintaining query performance via StarRocks.
 
 ## Results
 
