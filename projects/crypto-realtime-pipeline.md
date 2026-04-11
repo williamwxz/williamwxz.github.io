@@ -1,39 +1,44 @@
-# Crypto Exchange Batch & Real-Time Pipeline
+# Crypto Market Data Platform
 
-**Timeline:** Nov 2025 - Mar 2026
-**Stack:** Rust, Kafka, StarRocks, ClickHouse, Dagster, AWS EKS, S3 Glacier, Grafana
+**Timeline:** Nov 2025 - Present
+**Stack:** Rust, Kafka, StarRocks, ClickHouse, Dagster, AWS EKS, S3, Grafana
 
 ## Overview
 
-Designed and built a high-throughput data platform for ingesting, storing, and analyzing crypto exchange data in real time. The system supports both streaming and batch workloads, serving quant researchers and traders with sub-second data freshness.
+Architected a high-throughput crypto market data platform on AWS S3 with medallion architecture (raw/aggregated/production) to serve crypto quant analysis. The platform ingests real-time and historical data from multiple exchanges, supports sub-2-second analytical queries, and powers Grafana dashboards for quant strategy performance.
 
 ## Architecture
 
 ```
 Exchanges (REST/WebSocket)
-        │
+   Amberdata, Binance, etc.
+        |
    Rust Ingestion Service (300GB+/day)
-        │
+        |
       Kafka
        ┌┴┐
-       │ │
-  ClickHouse   S3 (zstd compressed)
-  (real-time)   (historical archive)
-       │
-    Grafana
-  (dashboards)
+       | |
+  ClickHouse   S3 Data Lake (10TB+)
+  (real-time)   (medallion: raw/agg/prod)
+       |              |
+    Grafana      StarRocks
+  (dashboards)  (historical OLAP)
 ```
 
 ## Key Technical Decisions
 
-- **Rust for ingestion:** Chose Rust over Python for the data ingestion layer to handle high-throughput, low-latency publishing to Kafka across multiple exchanges simultaneously. Achieved 99.9% uptime with minimal resource footprint.
-- **ClickHouse over Redshift:** Migrated from batch-only Redshift to ClickHouse for real-time OLAP queries. Reduced end-to-end latency by 60%.
-- **Dagster for orchestration:** Used Dagster (over Airflow) to orchestrate historical backfills from Binance and Amberdata, as well as ETL pipelines across the medallion architecture (bronze/silver/gold). Leveraged asset-based orchestration for full lineage tracking.
-- **Cost optimization:** Migrated from Redshift to S3 with Glacier tiered storage for 10TB+ of historical data, drastically reducing infrastructure costs while maintaining query performance via StarRocks.
+- **AWS S3 as data lake:** Applied medallion architecture to manage raw data, aggregated data, and production data across 10TB+ of exchange data with tiered storage.
+- **Rust for ingestion:** Built WebSocket ingestion services streaming market data from Amberdata, Binance, and exchange APIs into Kafka at 300GB+/day. Achieved 99.9% uptime with minimal resource footprint.
+- **ClickHouse for real-time:** Streamed real-time data into ClickHouse with optimized schemas, reducing analytical query times to under 2 seconds.
+- **StarRocks for historical:** Configured StarRocks for historical OLAP queries across the full data lake.
+- **Kubernetes DevOps:** Deployed and operated StarRocks, ClickHouse, Kafka, and Grafana on Kubernetes, managing the full DevOps lifecycle.
+- **Dagster for orchestration:** Orchestrated batch ETL and historical backfills across the medallion architecture with full data lineage tracking.
+- **Grafana dashboards:** Built dashboards visualizing quant strategy performance metrics for the research team.
 
 ## Results
 
+- 10TB+ data lake with medallion architecture on AWS S3
 - 300GB+/day ingestion throughput across multiple crypto exchanges
-- 60% reduction in end-to-end data latency
-- 20TB+ historical backfill completed with full lineage tracking
+- Sub-2-second analytical query latency on ClickHouse
+- Full Kubernetes-managed infrastructure (StarRocks, ClickHouse, Kafka, Grafana)
 - Real-time Grafana dashboards serving quant research team

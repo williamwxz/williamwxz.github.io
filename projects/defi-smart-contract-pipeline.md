@@ -5,7 +5,7 @@
 
 ## Overview
 
-Built a real-time data platform to capture smart contract events across all EVM-compatible chains, streaming blockchain data into BigQuery and ClickHouse for DeFi analytics and risk modeling.
+Built a real-time data platform ingesting all EVM chain blocks, transactions, and logs, with extended parsing for Morpho and Aave smart contract events. Streams blockchain data into BigQuery and ClickHouse for DeFi analytics and risk modeling.
 
 ## Architecture
 
@@ -30,16 +30,16 @@ BigQuery   ClickHouse
 
 ## Key Technical Decisions
 
-- **Rust for multi-chain WebSocket:** Built the ingestion service in Rust to handle concurrent WebSocket connections to multiple RPC providers across all EVM chains. Achieved 1MB/s sustained throughput with minimal resource usage.
-- **Dual sink architecture:** Streamed events to both BigQuery (for long-term analytics and SQL access) and ClickHouse (for low-latency operational queries on Morpho protocol data).
-- **Dagster for ABI parsing:** Used Dagster jobs running at 5-10 minute intervals to parse blockchain logs via contract ABIs, decoding raw event data into structured tables.
-- **AI-assisted extensibility:** Leveraged Claude AI agent to make the Rust service more extensible, enabling rapid onboarding of new EVM chains and contract types.
+- **Rust for multi-chain WebSocket:** Built the ingestion service in Rust to capture all EVM chain blocks, transactions, and logs via concurrent WebSocket connections to multiple RPC providers. Achieved 1MB/s sustained throughput with minimal resource usage.
+- **Dual sink architecture:** Streamed raw chain data to both BigQuery (for long-term analytics and SQL access) and ClickHouse (for low-latency operational queries).
+- **Morpho & Aave event parsing:** Extended the service to parse Morpho and Aave smart contract events into ClickHouse, with ETL and event parsing orchestrated by Dagster.
+- **Claude-powered chain expansion:** Developed Claude skills for rapid chain expansion, enabling new EVM chain onboarding with minimal code changes.
 - **End-to-end observability:** GCP log-based metrics feeding into incident.io for automated alerting on ingestion failures, parsing errors, and throughput anomalies.
 
 ## Results
 
-- Real-time event capture across all EVM-compatible chains
+- Real-time ingestion of all EVM chain blocks, transactions, and logs
 - 1MB/s sustained streaming throughput
-- Dual-sink analytics (BigQuery + ClickHouse)
-- Rapid chain onboarding via AI-assisted code generation
+- Morpho and Aave event parsing into ClickHouse via Dagster orchestration
+- Rapid chain onboarding via Claude-powered skills
 - Full monitoring and incident management pipeline

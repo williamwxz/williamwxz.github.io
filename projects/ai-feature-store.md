@@ -1,6 +1,6 @@
 # ML Feature Store for Quantitative Analytics
 
-**Timeline:** May 2025 - Aug 2025
+**Timeline:** Apr 2024 - Oct 2024
 **Stack:** Python, dbt, Snowflake, Snowflake Cortex, Y42, Hopsworks
 
 ## Overview

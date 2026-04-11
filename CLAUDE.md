@@ -18,11 +18,26 @@ Push to `master`. GitHub Pages auto-deploys from the root. There is no build ste
 
 ## Editing the Site
 
-**To add or update a project card in `index.html`:** Copy an existing `.project-card` `<a>` block. Keep the `href` pointing to the corresponding `projects/*.md` file. Use existing CSS classes: `tag`, `tag.ai`, `tag.web3`, `skill-tag`.
+**To add or update a project card in `index.html`:** Copy an existing `.project-card` `<a>` block. Keep the `href` pointing to the corresponding `projects/*.md` file.
 
-**To add a project detail page:** Create `projects/<slug>.md` with frontmatter-style header (`# Title`, `**Timeline:** ...`, `**Stack:** ...`), then an `## Overview`, `## Architecture` (ASCII diagram preferred), `## Key Technical Decisions`, and `## Results` section — match the pattern in existing files.
+**Tag color semantics:**
+- `tag` (blue) — neutral tech stack items (Kafka, Rust, S3, etc.)
+- `tag.ai` (purple) — AI/ML, feature stores, autonomous systems, IoT
+- `tag.web3` (orange) — blockchain, crypto, DeFi, Solidity
 
-**Project ordering in `index.html`:** Most recent first.
+**To add a project detail page:** Create `projects/<slug>.md` with a frontmatter-style header (`# Title`, `**Timeline:** ...`, `**Stack:** ...`), then sections: `## Overview`, `## Architecture` (ASCII diagram preferred), `## Key Technical Decisions`, `## Results` — match the pattern in existing files.
+
+**Project ordering in `index.html`:** Most impactful / most recent work first. Not strictly chronological.
+
+## When Adding a New Project — Sync Checklist
+
+All three of these must be updated together:
+
+1. **`projects/<slug>.md`** — new detail page
+2. **`index.html`** — new `.project-card` block in the Projects section
+3. **`sitemap.xml`** — new `<url>` entry with `https://williamwxz.github.io/projects/<slug>` (no `.md` extension in sitemap)
+
+Also check: the JSON-LD `knowsAbout` array in `index.html` `<head>` if new technologies are introduced.
 
 ## Content Rules (from parent CLAUDE.md)
 

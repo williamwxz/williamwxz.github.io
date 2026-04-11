@@ -10,7 +10,7 @@ Developed a near real-time data pipeline for an autonomous driving company, conv
 ## Architecture
 
 ```
-Autonomous Vehicles (Protobuf streams, 100MB–1GB/file)
+Autonomous Vehicles (Protobuf streams, 100MB–10GB/file)
             │
      Kafka + RabbitMQ
       (200K msgs/day)
@@ -33,9 +33,10 @@ Autonomous Vehicles (Protobuf streams, 100MB–1GB/file)
 
 - **Spark Streaming over micro-batch:** Migrated from custom micro-batch jobs to native Spark Streaming, improving system stability and reducing resource usage by 80%.
 - **Dual message queue:** Used Kafka for high-throughput sensor data and RabbitMQ for lower-volume control messages, optimizing each path independently.
-- **Protobuf → Parquet:** Direct schema-aware conversion of large files (100MB–1GB each) preserving nested structures, enabling efficient columnar queries downstream.
+- **Customized Protobuf → Parquet:** Updated the Spark SDK to support customized Protobuf formats, converting raw files (100MB–10GB each) stored on S3 to Parquet while preserving nested structures for efficient columnar queries.
 - **Iceberg data lake:** Used Apache Iceberg to manage data ingestion, providing schema evolution, time-travel, and partition management on top of S3/HDFS storage.
-- **Python SDK for self-service:** Extended an internal Python library enabling data scientists to query Iceberg tables directly and submit Spark jobs on Kubernetes, reducing dependency on the data engineering team.
+- **Auto-scaling on Kubernetes:** Implemented auto-scaling for Spark jobs on Kubernetes to handle variable data volumes across data centers.
+- **Python SDK for self-service:** Extended an internal Python SDK enabling data scientists to query Iceberg tables directly and submit Spark jobs on Kubernetes.
 - **Elasticsearch for observability:** Tracked data lineage and ETL job status in Elasticsearch, providing real-time visibility into pipeline health across data centers.
 
 ## Results
