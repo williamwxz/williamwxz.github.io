@@ -533,5 +533,81 @@
   </div>
 </footer>
 
+<!-- WebMCP: expose site tools to AI agents via the browser -->
+<script>
+(function () {
+  if (!navigator.modelContext || !navigator.modelContext.provideContext) return;
+
+  const projects = [
+    { name: "ML Feature Store for Quantitative Analytics", dates: "May 2025 – Aug 2025", tags: ["AI/ML", "Feature Store", "Snowflake Cortex", "Hopsworks", "Snowflake", "dbt", "Python"], url: "projects/ai-feature-store.md", desc: "Centralized ML feature store serving 90+ features via Hopsworks, Snowflake, and a Python SDK. Built a Snowflake native agent for natural-language data exploration." },
+    { name: "DeFi Smart Contract Data Pipeline", dates: "Feb 2025 – Jun 2025", tags: ["EVM Chains", "Morpho", "Rust", "Kafka", "BigQuery", "ClickHouse", "Dagster"], url: "projects/defi-smart-contract-pipeline.md", desc: "Real-time smart contract event capture across all EVM chains via Rust WebSocket, streaming 1MB/s into Kafka, BigQuery, and ClickHouse." },
+    { name: "Crypto Exchange Batch & Real-Time Pipeline", dates: "Nov 2025 – Mar 2026", tags: ["Rust", "Kafka", "StarRocks", "Dagster", "S3 Glacier", "EKS", "Grafana"], url: "projects/crypto-realtime-pipeline.md", desc: "High-throughput Rust ingestion publishing 300GB+/day to Kafka, with StarRocks on Kubernetes for real-time OLAP." },
+    { name: "Kamino Solana Vault Curation", dates: "Oct 2025 – Dec 2025", tags: ["Solana", "DeFi", "TypeScript", "Bun", "Dagster", "GCP KMS"], url: "projects/kamino-solana-vault.md", desc: "Vault curation service on Kamino protocol managing $60M+ in assets." },
+    { name: "Web3 Full Stack – RWA Lending Protocol", dates: "May 2024 – Jan 2025", tags: ["Solidity", "DeFi", "Multi-Chain", "Go", "Next.js", "WebSocket", "EKS"], url: "projects/rwa-lending-protocol.md", desc: "Decentralized lending protocol tokenizing real-world account receivables. ~$300K TVL." },
+    { name: "Crypto Tax Calculation Pipeline", dates: "Jan 2024 – Mar 2024", tags: ["Dagster", "Iceberg", "Redshift", "PostgreSQL", "S3", "Crypto"], url: "projects/crypto-tax-pipeline.md", desc: "Automated crypto tax platform with Dagster, Iceberg data lake, and FIFO/LIFO/HIFO cost-basis methods." },
+    { name: "Crypto Market Surveillance ETL Pipeline", dates: "Jan 2024 – May 2024", tags: ["Airflow", "dbt", "Iceberg", "Redshift", "S3", "Crypto"], url: "projects/market-surveillance-pipeline.md", desc: "Compliance-focused ETL pipeline with Iceberg data lake and automated anomaly alerting." },
+    { name: "Autonomous Driving Data Pipeline", dates: "Dec 2021 – May 2022", tags: ["Autonomous Driving", "Spark Streaming", "Kafka", "Protobuf", "Kubernetes"], url: "projects/vehicle-data-pipeline.md", desc: "Near real-time pipeline converting Protobuf to Parquet at 1TB+/day. Spark Streaming migration reduced time by 70%." },
+    { name: "Robotic Orchestrator", dates: "Nov 2019 – Feb 2021", tags: ["IoT", "AWS Lambda", "Greengrass", "MQTT", "AWS CDK"], url: "projects/robotic-orchestrator.md", desc: "Full-stack IoT app orchestrating warehouse AGVs via MQTT, Lambda, and Greengrass. Saved $500K/year per warehouse." }
+  ];
+
+  navigator.modelContext.provideContext({
+    tools: [
+      {
+        name: "get_contact_info",
+        description: "Get William Zhang's contact information and professional links",
+        inputSchema: { type: "object", properties: {}, additionalProperties: false },
+        execute: function () {
+          return {
+            name: "Weixin (William) Zhang",
+            title: "Data Infrastructure Engineer",
+            email: "williamwxz@gmail.com",
+            github: "https://github.com/williamwxz",
+            telegram: "https://t.me/williamwxz",
+            portfolio: "https://williamwxz.github.io"
+          };
+        }
+      },
+      {
+        name: "list_projects",
+        description: "List all portfolio projects with summaries, dates, and tech tags. Optionally filter by a technology keyword.",
+        inputSchema: {
+          type: "object",
+          properties: {
+            filter: { type: "string", description: "Optional keyword to filter projects by tag or description (e.g. 'Rust', 'Kafka', 'DeFi')" }
+          },
+          additionalProperties: false
+        },
+        execute: function (input) {
+          var results = projects;
+          if (input && input.filter) {
+            var q = input.filter.toLowerCase();
+            results = projects.filter(function (p) {
+              return p.tags.some(function (t) { return t.toLowerCase().includes(q); }) ||
+                     p.name.toLowerCase().includes(q) ||
+                     p.desc.toLowerCase().includes(q);
+            });
+          }
+          return results.map(function (p) {
+            return { name: p.name, dates: p.dates, tags: p.tags, description: p.desc, details_url: p.url };
+          });
+        }
+      },
+      {
+        name: "get_tech_stack",
+        description: "Get William Zhang's full technology stack organized by category",
+        inputSchema: { type: "object", properties: {}, additionalProperties: false },
+        execute: function () {
+          return {
+            languages: ["Python", "Rust", "TypeScript", "Go", "Java", "SQL", "Solidity"],
+            data_and_ai: ["Spark", "Kafka", "Dagster", "Airflow", "dbt", "ClickHouse", "StarRocks", "Snowflake", "Redshift", "BigQuery", "Iceberg", "Hopsworks", "Snowflake Cortex"],
+            infrastructure: ["Kubernetes", "Docker", "AWS", "GCP", "Terraform", "Grafana"]
+          };
+        }
+      }
+    ]
+  });
+})();
+</script>
+
 </body>
 </html>

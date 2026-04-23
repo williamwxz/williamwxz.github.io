@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://williamwxz.github.io/sitemap.xml
+
+# Content Signals — declare AI content usage preferences
+# See https://contentsignals.org/ and draft-romm-aipref-contentsignals
+Content-Signal: ai-train=no, search=yes, ai-input=yes

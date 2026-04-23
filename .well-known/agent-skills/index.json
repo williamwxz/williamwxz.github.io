@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "portfolio-browse",
+      "type": "skill-md",
+      "description": "Browse William Zhang's data infrastructure engineering portfolio — list projects, filter by technology, get contact info and tech stack.",
+      "url": "/.well-known/agent-skills/portfolio-browse/SKILL.md",
+      "digest": "sha256:06fb09a53eaf4b5913cd074956de3bb4a741ec1820f6498e3fa17190cd08ac92"
+    }
+  ]
+}
