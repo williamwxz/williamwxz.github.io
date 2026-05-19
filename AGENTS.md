@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
 
 ## What This Repo Is
 
@@ -57,10 +57,10 @@ The site implements three agent-discoverability standards (the ones feasible on 
 
 In addition to the sync checklist below, also update the `projects` array inside the WebMCP `<script>` block at the bottom of `index.html` with the new project's name, dates, tags, URL, and description.
 
-## Content Rules (from parent CLAUDE.md)
+## Content Rules (from parent AGENTS.md)
 
 - Title/tagline: "AI and Data Infrastructure Engineer" — do not drop "AI and" or "Data" from the title
 - Do NOT fabricate projects or metrics — only use details William has confirmed
 - Do NOT add "AI" to project names unless it genuinely applies (ML Feature Store is the exception)
-- The Snowflake native agent in the Feature Store project uses **Snowflake Cortex**, not LangChain or Claude
+- The Snowflake native agent in the Feature Store project uses **Snowflake Cortex**, not LangChain or Codex
 - Languages ordered by proficiency in Skills section: Python, Rust, TypeScript, Go, Java, SQL, Solidity

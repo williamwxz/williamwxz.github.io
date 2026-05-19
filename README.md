@@ -1,6 +1,6 @@
 # williamwxz.github.io
 
-Personal project portfolio — Data Infrastructure Engineer building systems for AI/ML and Web3.
+Personal project portfolio — AI and Data Infrastructure Engineer building systems for AI/ML and Web3.
 
 **Live site:** [williamwxz.github.io](https://williamwxz.github.io)
 

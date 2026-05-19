@@ -24,6 +24,6 @@ Each project has a detailed markdown page at `projects/<slug>.md` with architect
 ## Site info
 
 - **Owner**: Weixin (William) Zhang
-- **Role**: Data Infrastructure Engineer
+- **Role**: AI and Data Infrastructure Engineer
 - **Specialties**: Real-time streaming, ML feature stores, data lakes, DeFi/blockchain data platforms
 - **URL**: https://williamwxz.github.io

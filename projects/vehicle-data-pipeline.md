@@ -5,7 +5,7 @@
 
 ## Overview
 
-Developed a near real-time data pipeline for an autonomous driving company, converting vehicle sensor data from Protobuf to Apache Parquet at 1TB+/day scale across multiple data centers in a hybrid cloud environment.
+Developed a near real-time data pipeline for an autonomous driving company, converting vehicle sensor data from Protobuf to Apache Parquet at 10TB+/day scale across multiple data centers in a hybrid cloud environment.
 
 ## Architecture
 
@@ -41,7 +41,7 @@ Autonomous Vehicles (Protobuf streams, 100MB–10GB/file)
 
 ## Results
 
-- 1TB+/day processing throughput across multiple data centers
+- 10TB+/day processing throughput across multiple data centers
 - 70% reduction in workflow execution time
 - 50% reduction in infrastructure costs
 - 80% reduction in resource usage via Spark Streaming migration

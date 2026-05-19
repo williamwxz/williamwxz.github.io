@@ -1,44 +1,25 @@
 # Crypto Market Data Platform
 
-**Timeline:** Nov 2025 - Present
-**Stack:** Rust, Kafka, StarRocks, ClickHouse, Dagster, AWS EKS, S3, Grafana
+**Timeline:** Nov 2025 – Present
+**Stack:** Python, Flink, Redpanda, ClickHouse Cloud, StarRocks, Dagster, AWS (ECS Fargate, S3, S3 Glacier), Supabase, Terraform, Grafana
 
 ## Overview
 
-Architected a high-throughput crypto market data platform on AWS S3 with medallion architecture (raw/aggregated/production) to serve crypto quant analysis. The platform ingests real-time and historical data from multiple exchanges, supports sub-2-second analytical queries, and powers Grafana dashboards for quant strategy performance.
+End-to-end crypto market data platform serving quantitative research with both **real-time streaming PnL** and a **10TB+ historical data lake**. Live PnL lands in ClickHouse within seconds of each closed candle; the historical lake powers cross-exchange backtesting and ad-hoc OLAP — all on a cost-optimized AWS footprint under $100/month.
 
 ## Architecture
 
 ```
-Exchanges (REST/WebSocket)
-   Amberdata, Binance, etc.
-        |
-   Rust Ingestion Service (300GB+/day)
-        |
-      Kafka
-       ┌┴┐
-       | |
-  ClickHouse   S3 Data Lake (10TB+)
-  (real-time)   (medallion: raw/agg/prod)
-       |              |
-    Grafana      StarRocks
-  (dashboards)  (historical OLAP)
+Real-time:   Binance WS ──► WebSocket client ──► Redpanda ──► Flink job ──► ClickHouse Cloud ──► Grafana
+Historical:  Dagster ──► exchange REST APIs ──► S3 data lake (medallion) ──► StarRocks
+                                                       │
+                                                       └──► S3 Glacier (cold tier)
 ```
 
-## Key Technical Decisions
+## Highlights
 
-- **AWS S3 as data lake:** Applied medallion architecture to manage raw data, aggregated data, and production data across 10TB+ of exchange data with tiered storage.
-- **Rust for ingestion:** Built WebSocket ingestion services streaming market data from Amberdata, Binance, and exchange APIs into Kafka at 300GB+/day. Achieved 99.9% uptime with minimal resource footprint.
-- **ClickHouse for real-time:** Streamed real-time data into ClickHouse with optimized schemas, reducing analytical query times to under 2 seconds.
-- **StarRocks for historical:** Configured StarRocks for historical OLAP queries across the full data lake.
-- **Kubernetes DevOps:** Deployed and operated StarRocks, ClickHouse, Kafka, and Grafana on Kubernetes, managing the full DevOps lifecycle.
-- **Dagster for orchestration:** Orchestrated batch ETL and historical backfills across the medallion architecture with full data lineage tracking.
-- **Grafana dashboards:** Built dashboards visualizing quant strategy performance metrics for the research team.
-
-## Results
-
-- 10TB+ data lake with medallion architecture on AWS S3
-- 300GB+/day ingestion throughput across multiple crypto exchanges
-- Sub-2-second analytical query latency on ClickHouse
-- Full Kubernetes-managed infrastructure (StarRocks, ClickHouse, Kafka, Grafana)
-- Real-time Grafana dashboards serving quant research team
+- **Sub-minute end-to-end PnL latency** from exchange close to per-strategy PnL row in ClickHouse Cloud and on to the Grafana dashboards.
+- **10TB+ multi-exchange historical lake** on S3 with medallion architecture across raw, aggregated, and production tiers; StarRocks delivers cross-exchange historical OLAP at sub-2-second latency for quant research and backtesting.
+- **Idempotent by design** — rolling-window full-recompute with ClickHouse `ReplacingMergeTree` means any minute of any day is safe to re-run with no double-counting; cold-start replay crashes on >0.2% PnL deviation, catching silent corruption before it reaches dashboards.
+- **100% IaC, zero static credentials** — Terraform owns every AWS resource and GitHub Actions deploys via OIDC role assumption with no long-lived keys.
+- **Substantial AWS cost reduction** by cold-tiering historical data to **S3 Glacier**, migrating Dagster metadata from **RDS Postgres to Supabase**, and consolidating workloads off **EKS onto ECS Fargate** after pruning unnecessary services.

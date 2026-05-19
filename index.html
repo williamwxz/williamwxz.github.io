@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>William Zhang | Data Infrastructure Engineer &mdash; Projects</title>
-  <meta name="description" content="Project portfolio of a Data Infrastructure Engineer specializing in real-time streaming, ML feature stores, scalable data platforms, and cloud-native warehousing.">
-  <meta name="keywords" content="Data Infrastructure Engineer, ML Feature Store, Kafka, Spark, ClickHouse, StarRocks, Hopsworks, Rust, Python, Kubernetes, AWS, Real-Time Pipelines, Data Warehouse, DeFi, Blockchain">
+  <title>William Zhang | AI and Data Infrastructure Engineer &mdash; Projects</title>
+  <meta name="description" content="Project portfolio of an AI and Data Infrastructure Engineer specializing in real-time streaming, ML feature stores, scalable data platforms, and cloud-native warehousing.">
+  <meta name="keywords" content="AI and Data Infrastructure Engineer, AI Infrastructure Engineer, ML Feature Store, AI Agents, Multi-Agent Systems, Vertex AI, Gemini, pgvector, Vector Database, Agent Memory, RAG, Kafka, Spark, ClickHouse, StarRocks, Hopsworks, Rust, Python, TypeScript, Kubernetes, GKE, Cloud Run, AWS, GCP, Terraform, Helm, Real-Time Pipelines, Data Warehouse, DeFi, Blockchain">
   <meta name="author" content="Weixin (William) Zhang">
 
   <!-- Open Graph -->
   <meta property="og:title" content="William Zhang | Data Infrastructure Portfolio">
-  <meta property="og:description" content="Data Infrastructure Engineer building ML feature stores, real-time streaming pipelines, and scalable data platforms.">
+  <meta property="og:description" content="AI and Data Infrastructure Engineer building ML feature stores, real-time streaming pipelines, and scalable data platforms.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://williamwxz.github.io">
 
@@ -20,7 +20,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Weixin (William) Zhang",
-    "jobTitle": "Data Infrastructure Engineer",
+    "jobTitle": "AI and Data Infrastructure Engineer",
     "url": "https://williamwxz.github.io",
     "email": "williamwxz@gmail.com",
     "sameAs": [
@@ -28,9 +28,12 @@
       "https://t.me/williamwxz"
     ],
     "knowsAbout": [
-      "Data Infrastructure", "ML Feature Stores", "Real-Time Streaming",
+      "Data Infrastructure", "AI Infrastructure", "ML Feature Stores", "Real-Time Streaming",
+      "Multi-Agent Systems", "LLM Tool Use", "Vertex AI", "Gemini", "OpenAI",
+      "pgvector", "Vector Databases", "Agent Memory", "RAG", "Semantic Search",
       "Apache Kafka", "Apache Spark", "ClickHouse", "StarRocks", "Hopsworks",
-      "Rust", "Python", "Kubernetes", "AWS", "Data Warehousing", "ETL Pipelines",
+      "Rust", "Python", "TypeScript", "Kubernetes", "GKE", "Cloud Run",
+      "AWS", "GCP", "Terraform", "Helm", "Pub/Sub", "Data Warehousing", "ETL Pipelines",
       "dbt", "Dagster", "Airflow", "Blockchain Analytics", "DeFi"
     ]
   }
@@ -264,7 +267,7 @@
 <header>
   <div class="container">
     <h1>William Zhang</h1>
-    <div class="tagline">Data Infrastructure Engineer</div>
+    <div class="tagline">AI and Data Infrastructure Engineer</div>
     <div class="contact-row">
       <a href="mailto:williamwxz@gmail.com">Email</a>
       <span>&middot;</span>
@@ -282,15 +285,40 @@
     <section id="about">
       <h2>About</h2>
       <div class="about">
-        I build data infrastructure at scale &mdash; real-time streaming systems,
-        ML feature stores, cloud-native data lakes, and DeFi protocol data platforms.
-        This page is a collection of projects I've worked on.
+        AI and Data Infrastructure Engineer with 8+ years building production data platforms for ML, AI, and Web3
+        &mdash; real-time streaming pipelines, ML feature stores, data lakehouses, and the cloud-native infrastructure
+        that ties them together across AWS, GCP, and Kubernetes.
       </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects">
       <h2>Projects</h2>
+
+      <a class="project-card" href="projects/pacific-nook-gpt.md">
+        <div class="project-header">
+          <div class="project-title">AI Infrastructure Platform for Furniture eCommerce</div>
+          <div class="project-dates">Oct 2025 &ndash; Present</div>
+        </div>
+        <p class="project-desc">
+          Self-hosted AI infrastructure: pgvector-backed RAG on Neon Postgres, an async embedding service fed by Pub/Sub
+          (persist-first, content-checksum dedup), and a model-serving layer that fronts Vertex AI today and a planned
+          GKE GPU node pool tomorrow. AI agents are thin clients on top of these shared primitives.
+        </p>
+        <div class="project-tags">
+          <span class="tag ai">RAG</span>
+          <span class="tag ai">pgvector</span>
+          <span class="tag ai">Embedding Pipeline</span>
+          <span class="tag ai">Model Serving</span>
+          <span class="tag ai">Gemini / Vertex AI</span>
+          <span class="tag">Pub/Sub</span>
+          <span class="tag">GKE / GPU</span>
+          <span class="tag">Postgres / Prisma</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">Helm</span>
+        </div>
+        <div class="read-more">Read architecture details</div>
+      </a>
 
       <a class="project-card" href="projects/ai-feature-store.md">
         <div class="project-header">
@@ -320,8 +348,8 @@
         </div>
         <p class="project-desc">
           Real-time smart contract event capture across all EVM chains via Rust WebSocket service,
-          streaming 1MB/s into Kafka, BigQuery, and ClickHouse. Extensible connector framework
-          with AI-assisted code generation via Claude.
+          streaming 5MB/s into Kafka, BigQuery, and ClickHouse. Canonical blockchain data model,
+          Kubernetes deployment via Helm and Terraform, and AI-assisted chain expansion via Claude.
         </p>
         <div class="project-tags">
           <span class="tag web3">EVM Chains</span>
@@ -443,7 +471,7 @@
           <div class="project-dates">Dec 2021 &ndash; May 2022</div>
         </div>
         <p class="project-desc">
-          Near real-time pipeline converting Protobuf to Parquet at 1TB+/day for autonomous driving.
+          Near real-time pipeline converting Protobuf to Parquet at 10TB+/day for autonomous driving.
           Spark Streaming migration reduced workflow time by 70% and infra costs by 50%.
         </p>
         <div class="project-tags">
@@ -484,41 +512,89 @@
           <div class="skill-category">Languages</div>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
-            <span class="skill-tag">Rust</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">Go</span>
             <span class="skill-tag">Java</span>
+            <span class="skill-tag">Scala</span>
+            <span class="skill-tag">TypeScript</span>
             <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Rust</span>
+            <span class="skill-tag">Go</span>
             <span class="skill-tag">Solidity</span>
+            <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">C++</span>
           </div>
         </div>
         <div class="skill-row">
-          <div class="skill-category">Data & AI</div>
+          <div class="skill-category">Streaming &amp; Real-Time</div>
           <div class="skill-tags">
-            <span class="skill-tag">Spark</span>
             <span class="skill-tag">Kafka</span>
-            <span class="skill-tag">Dagster</span>
-            <span class="skill-tag">Airflow</span>
-            <span class="skill-tag">dbt</span>
+            <span class="skill-tag">Redpanda</span>
+            <span class="skill-tag">Flink</span>
+            <span class="skill-tag">Spark Streaming</span>
+            <span class="skill-tag">WebSocket</span>
+            <span class="skill-tag">CDC</span>
+            <span class="skill-tag">Event-Driven Architecture</span>
+            <span class="skill-tag">gRPC</span>
+            <span class="skill-tag">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-category">Warehouses &amp; Lakehouses</div>
+          <div class="skill-tags">
             <span class="skill-tag">ClickHouse</span>
             <span class="skill-tag">StarRocks</span>
             <span class="skill-tag">Snowflake</span>
-            <span class="skill-tag">Redshift</span>
             <span class="skill-tag">BigQuery</span>
+            <span class="skill-tag">Redshift</span>
             <span class="skill-tag">Iceberg</span>
+            <span class="skill-tag">Trino</span>
+            <span class="skill-tag">Athena</span>
+            <span class="skill-tag">S3</span>
+            <span class="skill-tag">S3 Glacier</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Supabase</span>
+            <span class="skill-tag">Elasticsearch</span>
             <span class="skill-tag">Hopsworks</span>
-            <span class="skill-tag">Snowflake Cortex</span>
           </div>
         </div>
         <div class="skill-row">
-          <div class="skill-category">Infra</div>
+          <div class="skill-category">Orchestration &amp; Modeling</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Dagster</span>
+            <span class="skill-tag">Airflow</span>
+            <span class="skill-tag">dbt</span>
+            <span class="skill-tag">Spark</span>
+            <span class="skill-tag">Y42</span>
+            <span class="skill-tag">Snowflake Cortex</span>
+            <span class="skill-tag">Medallion Architecture</span>
+            <span class="skill-tag">Data Lakehouse</span>
+            <span class="skill-tag">ML Feature Stores</span>
+            <span class="skill-tag">Schema Evolution</span>
+            <span class="skill-tag">Protobuf</span>
+            <span class="skill-tag">Parquet</span>
+            <span class="skill-tag">Avro</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-category">Cloud &amp; DevOps</div>
           <div class="skill-tags">
             <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Helm</span>
             <span class="skill-tag">Docker</span>
-            <span class="skill-tag">AWS</span>
-            <span class="skill-tag">GCP</span>
+            <span class="skill-tag">AWS EKS</span>
+            <span class="skill-tag">AWS ECS Fargate</span>
+            <span class="skill-tag">AWS Lambda</span>
+            <span class="skill-tag">AWS CDK</span>
+            <span class="skill-tag">AWS IoT Core</span>
+            <span class="skill-tag">AWS Glue</span>
+            <span class="skill-tag">AWS Greengrass</span>
+            <span class="skill-tag">GCP BigQuery</span>
+            <span class="skill-tag">GCP KMS</span>
+            <span class="skill-tag">GCP Monitoring</span>
             <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">CI/CD</span>
             <span class="skill-tag">Grafana</span>
+            <span class="skill-tag">Prometheus</span>
           </div>
         </div>
       </div>
@@ -540,13 +616,13 @@
 
   const projects = [
     { name: "ML Feature Store for Quantitative Analytics", dates: "May 2025 – Aug 2025", tags: ["AI/ML", "Feature Store", "Snowflake Cortex", "Hopsworks", "Snowflake", "dbt", "Python"], url: "projects/ai-feature-store.md", desc: "Centralized ML feature store serving 90+ features via Hopsworks, Snowflake, and a Python SDK. Built a Snowflake native agent for natural-language data exploration." },
-    { name: "DeFi Smart Contract Data Pipeline", dates: "Feb 2025 – Jun 2025", tags: ["EVM Chains", "Morpho", "Rust", "Kafka", "BigQuery", "ClickHouse", "Dagster"], url: "projects/defi-smart-contract-pipeline.md", desc: "Real-time smart contract event capture across all EVM chains via Rust WebSocket, streaming 1MB/s into Kafka, BigQuery, and ClickHouse." },
+    { name: "DeFi Smart Contract Data Pipeline", dates: "Feb 2025 – Jun 2025", tags: ["EVM Chains", "Morpho", "Rust", "Kafka", "BigQuery", "ClickHouse", "Dagster", "Kubernetes", "Helm", "Terraform"], url: "projects/defi-smart-contract-pipeline.md", desc: "Real-time smart contract event capture across all EVM chains via Rust WebSocket, streaming 5MB/s into Kafka, BigQuery, and ClickHouse; deployed to Kubernetes via Helm and Terraform." },
     { name: "Crypto Exchange Batch & Real-Time Pipeline", dates: "Nov 2025 – Mar 2026", tags: ["Rust", "Kafka", "StarRocks", "Dagster", "S3 Glacier", "EKS", "Grafana"], url: "projects/crypto-realtime-pipeline.md", desc: "High-throughput Rust ingestion publishing 300GB+/day to Kafka, with StarRocks on Kubernetes for real-time OLAP." },
     { name: "Kamino Solana Vault Curation", dates: "Oct 2025 – Dec 2025", tags: ["Solana", "DeFi", "TypeScript", "Bun", "Dagster", "GCP KMS"], url: "projects/kamino-solana-vault.md", desc: "Vault curation service on Kamino protocol managing $60M+ in assets." },
     { name: "Web3 Full Stack – RWA Lending Protocol", dates: "May 2024 – Jan 2025", tags: ["Solidity", "DeFi", "Multi-Chain", "Go", "Next.js", "WebSocket", "EKS"], url: "projects/rwa-lending-protocol.md", desc: "Decentralized lending protocol tokenizing real-world account receivables. ~$300K TVL." },
     { name: "Crypto Tax Calculation Pipeline", dates: "Jan 2024 – Mar 2024", tags: ["Dagster", "Iceberg", "Redshift", "PostgreSQL", "S3", "Crypto"], url: "projects/crypto-tax-pipeline.md", desc: "Automated crypto tax platform with Dagster, Iceberg data lake, and FIFO/LIFO/HIFO cost-basis methods." },
     { name: "Crypto Market Surveillance ETL Pipeline", dates: "Jan 2024 – May 2024", tags: ["Airflow", "dbt", "Iceberg", "Redshift", "S3", "Crypto"], url: "projects/market-surveillance-pipeline.md", desc: "Compliance-focused ETL pipeline with Iceberg data lake and automated anomaly alerting." },
-    { name: "Autonomous Driving Data Pipeline", dates: "Dec 2021 – May 2022", tags: ["Autonomous Driving", "Spark Streaming", "Kafka", "Protobuf", "Kubernetes"], url: "projects/vehicle-data-pipeline.md", desc: "Near real-time pipeline converting Protobuf to Parquet at 1TB+/day. Spark Streaming migration reduced time by 70%." },
+    { name: "Autonomous Driving Data Pipeline", dates: "Dec 2021 – May 2022", tags: ["Autonomous Driving", "Spark Streaming", "Kafka", "Protobuf", "Kubernetes"], url: "projects/vehicle-data-pipeline.md", desc: "Near real-time pipeline converting Protobuf to Parquet at 10TB+/day. Spark Streaming migration reduced time by 70%." },
     { name: "Robotic Orchestrator", dates: "Nov 2019 – Feb 2021", tags: ["IoT", "AWS Lambda", "Greengrass", "MQTT", "AWS CDK"], url: "projects/robotic-orchestrator.md", desc: "Full-stack IoT app orchestrating warehouse AGVs via MQTT, Lambda, and Greengrass. Saved $500K/year per warehouse." }
   ];
 
@@ -559,7 +635,7 @@
         execute: function () {
           return {
             name: "Weixin (William) Zhang",
-            title: "Data Infrastructure Engineer",
+            title: "AI and Data Infrastructure Engineer",
             email: "williamwxz@gmail.com",
             github: "https://github.com/williamwxz",
             telegram: "https://t.me/williamwxz",
