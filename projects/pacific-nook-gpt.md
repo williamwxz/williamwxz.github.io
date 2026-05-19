@@ -1,6 +1,6 @@
 # AI Infrastructure Platform for Furniture eCommerce
 
-**Timeline:** Oct 2025 – Present
+**Timeline:** Mar 2026 – Present
 **Role:** Solo builder (side project)
 **Stack:** TypeScript, Node.js 20, Python, pgvector, Neon Postgres, Google Vertex AI, Gemini 3.1, `text-embedding-004`, vLLM, Google Pub/Sub, GKE, Cloud Run, Helm, Terraform, Workload Identity
 
