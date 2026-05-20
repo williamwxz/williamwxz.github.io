@@ -32,6 +32,12 @@ Developed embedded software for real-time video streaming devices; low-latency s
 
 ## Key Projects
 
+**AI Infrastructure Platform for Furniture eCommerce** *— Mar 2026 to Present*
+
+- Built self-hosted AI infrastructure on GCP for a Shopify furniture retailer using TypeScript, Python, Pub/Sub, pgvector on Neon Postgres, Vertex AI, vLLM on GKE, Cloud Run, Helm, and Terraform; consolidated RAG, embedding pipeline, and model serving into a shared platform, enabling new AI agents to be built against a unified API.
+- Kept product and merchant context fresh for every agent by streaming Shopify webhooks through a Pub/Sub embedding pipeline into pgvector, providing sub-500ms retrieval across ~1.9K products and ~2.7K SKU variants; reused the Neon Postgres database as the vector store, eliminating the operational overhead of a dedicated vector DB.
+- Designed a model-agnostic serving gateway exposing /embed, /generate, and /rerank endpoints as the single entry point for all agent inference, with per-workload routing directing bulk tasks to Gemini and a planned path to self-hosted vLLM on GKE; sustained sub-2-second first-token latency on streaming generation.
+
 **Crypto Market Data Platform** *— Nov 2025 to Present*
 
 - Designed end-to-end crypto market data platform on AWS using WebSocket, Redpanda, Flink, ClickHouse Cloud, Dagster, StarRocks, and S3, deployed across ECS Fargate and Kubernetes with 100% Terraform IaC and GitHub Actions OIDC.

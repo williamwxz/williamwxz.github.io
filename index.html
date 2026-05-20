@@ -9,7 +9,7 @@
   <meta name="author" content="Weixin (William) Zhang">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="William Zhang | Data Infrastructure Portfolio">
+  <meta property="og:title" content="William Zhang | AI and Data Infrastructure Portfolio">
   <meta property="og:description" content="AI and Data Infrastructure Engineer building ML feature stores, real-time streaming pipelines, and scalable data platforms.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://williamwxz.github.io">
@@ -301,9 +301,9 @@
           <div class="project-dates">Mar 2026 &ndash; Present</div>
         </div>
         <p class="project-desc">
-          Self-hosted AI infrastructure: pgvector-backed RAG on Neon Postgres, an async embedding service fed by Pub/Sub
-          (persist-first, content-checksum dedup), and a model-serving layer that fronts Vertex AI today and a planned
-          GKE GPU node pool tomorrow. AI agents are thin clients on top of these shared primitives.
+          Self-hosted AI infrastructure for a Shopify furniture retailer. pgvector-backed RAG on Neon Postgres, an async
+          embedding pipeline on Pub/Sub, and a model-agnostic serving gateway fronting Vertex AI with a planned path to
+          self-hosted vLLM on GKE. AI agents ship as thin clients on top.
         </p>
         <div class="project-tags">
           <span class="tag ai">RAG</span>
@@ -316,6 +316,47 @@
           <span class="tag">Postgres / Prisma</span>
           <span class="tag">Terraform</span>
           <span class="tag">Helm</span>
+        </div>
+        <div class="read-more">Read architecture details</div>
+      </a>
+
+      <a class="project-card" href="projects/crypto-realtime-pipeline.md">
+        <div class="project-header">
+          <div class="project-title">Crypto Exchange Batch &amp; Real-Time Pipeline</div>
+          <div class="project-dates">Nov 2025 &ndash; Mar 2026</div>
+        </div>
+        <p class="project-desc">
+          High-throughput Rust ingestion service publishing 300GB+/day to Kafka, with StarRocks on Kubernetes for real-time OLAP.
+          Dagster orchestrates backfills from Binance/Amberdata and ETL across medallion architecture. Migrated from Redshift to S3 Glacier, cutting infrastructure costs.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Rust</span>
+          <span class="tag">Kafka</span>
+          <span class="tag">StarRocks</span>
+          <span class="tag">Dagster</span>
+          <span class="tag">S3 Glacier</span>
+          <span class="tag">EKS</span>
+          <span class="tag">Grafana</span>
+        </div>
+        <div class="read-more">Read architecture details</div>
+      </a>
+
+      <a class="project-card" href="projects/kamino-solana-vault.md">
+        <div class="project-header">
+          <div class="project-title">Kamino Solana Vault Curation</div>
+          <div class="project-dates">Oct 2025 &ndash; Dec 2025</div>
+        </div>
+        <p class="project-desc">
+          Vault curation service on Kamino protocol (Solana) managing $60M+ in assets.
+          TypeScript/Bun application with GCP KMS signing and Dagster orchestration.
+        </p>
+        <div class="project-tags">
+          <span class="tag web3">Solana</span>
+          <span class="tag web3">DeFi</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Bun</span>
+          <span class="tag">Dagster</span>
+          <span class="tag">GCP KMS</span>
         </div>
         <div class="read-more">Read architecture details</div>
       </a>
@@ -363,47 +404,6 @@
         <div class="read-more">Read architecture details</div>
       </a>
 
-      <a class="project-card" href="projects/crypto-realtime-pipeline.md">
-        <div class="project-header">
-          <div class="project-title">Crypto Exchange Batch &amp; Real-Time Pipeline</div>
-          <div class="project-dates">Nov 2025 &ndash; Mar 2026</div>
-        </div>
-        <p class="project-desc">
-          High-throughput Rust ingestion service publishing 300GB+/day to Kafka, with StarRocks on Kubernetes for real-time OLAP.
-          Dagster orchestrates backfills from Binance/Amberdata and ETL across medallion architecture. Migrated from Redshift to S3 Glacier, cutting infrastructure costs.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Rust</span>
-          <span class="tag">Kafka</span>
-          <span class="tag">StarRocks</span>
-          <span class="tag">Dagster</span>
-          <span class="tag">S3 Glacier</span>
-          <span class="tag">EKS</span>
-          <span class="tag">Grafana</span>
-        </div>
-        <div class="read-more">Read architecture details</div>
-      </a>
-
-      <a class="project-card" href="projects/kamino-solana-vault.md">
-        <div class="project-header">
-          <div class="project-title">Kamino Solana Vault Curation</div>
-          <div class="project-dates">Oct 2025 &ndash; Dec 2025</div>
-        </div>
-        <p class="project-desc">
-          Vault curation service on Kamino protocol (Solana) managing $60M+ in assets.
-          TypeScript/Bun application with GCP KMS signing and Dagster orchestration.
-        </p>
-        <div class="project-tags">
-          <span class="tag web3">Solana</span>
-          <span class="tag web3">DeFi</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Bun</span>
-          <span class="tag">Dagster</span>
-          <span class="tag">GCP KMS</span>
-        </div>
-        <div class="read-more">Read architecture details</div>
-      </a>
-
       <a class="project-card" href="projects/rwa-lending-protocol.md">
         <div class="project-header">
           <div class="project-title">Web3 Full Stack &ndash; RWA Lending Protocol</div>
@@ -421,26 +421,6 @@
           <span class="tag">Next.js</span>
           <span class="tag">WebSocket</span>
           <span class="tag">EKS</span>
-        </div>
-        <div class="read-more">Read architecture details</div>
-      </a>
-
-      <a class="project-card" href="projects/crypto-tax-pipeline.md">
-        <div class="project-header">
-          <div class="project-title">Crypto Tax Calculation Pipeline</div>
-          <div class="project-dates">Jan 2024 &ndash; Mar 2024</div>
-        </div>
-        <p class="project-desc">
-          Automated crypto tax platform computing annual obligations across multiple organizations and users.
-          Dagster-orchestrated with Iceberg data lake, medallion architecture, and FIFO/LIFO/HIFO cost-basis methods.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Dagster</span>
-          <span class="tag">Iceberg</span>
-          <span class="tag">Redshift</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">S3</span>
-          <span class="tag web3">Crypto</span>
         </div>
         <div class="read-more">Read architecture details</div>
       </a>
@@ -465,18 +445,40 @@
         <div class="read-more">Read architecture details</div>
       </a>
 
+      <a class="project-card" href="projects/crypto-tax-pipeline.md">
+        <div class="project-header">
+          <div class="project-title">Crypto Tax Calculation Pipeline</div>
+          <div class="project-dates">Jan 2024 &ndash; Mar 2024</div>
+        </div>
+        <p class="project-desc">
+          Automated crypto tax platform computing annual obligations across multiple organizations and users.
+          Dagster-orchestrated with Iceberg data lake, medallion architecture, and FIFO/LIFO/HIFO cost-basis methods.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Dagster</span>
+          <span class="tag">Iceberg</span>
+          <span class="tag">Redshift</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">S3</span>
+          <span class="tag web3">Crypto</span>
+        </div>
+        <div class="read-more">Read architecture details</div>
+      </a>
+
       <a class="project-card" href="projects/vehicle-data-pipeline.md">
         <div class="project-header">
-          <div class="project-title">Autonomous Driving Data Pipeline</div>
+          <div class="project-title">Perception ML Training Data Platform &mdash; Autonomous Driving</div>
           <div class="project-dates">Dec 2021 &ndash; May 2022</div>
         </div>
         <p class="project-desc">
-          Near real-time pipeline converting Protobuf to Parquet at 10TB+/day for autonomous driving.
-          Spark Streaming migration reduced workflow time by 70% and infra costs by 50%.
+          ML training data infrastructure for an autonomous driving company &mdash; Protobuf sensor streams converted to ML-ready Parquet on Iceberg at 10TB+/day,
+          with a Python SDK that gave perception data scientists versioned training datasets and self-service Spark job submission on Kubernetes.
         </p>
         <div class="project-tags">
-          <span class="tag ai">Autonomous Driving</span>
+          <span class="tag ai">ML Training Data</span>
+          <span class="tag ai">Perception</span>
           <span class="tag">Spark Streaming</span>
+          <span class="tag">Iceberg</span>
           <span class="tag">Kafka</span>
           <span class="tag">Protobuf</span>
           <span class="tag">Kubernetes</span>
@@ -615,14 +617,15 @@
   if (!navigator.modelContext || !navigator.modelContext.provideContext) return;
 
   const projects = [
-    { name: "ML Feature Store for Quantitative Analytics", dates: "May 2025 – Aug 2025", tags: ["AI/ML", "Feature Store", "Snowflake Cortex", "Hopsworks", "Snowflake", "dbt", "Python"], url: "projects/ai-feature-store.md", desc: "Centralized ML feature store serving 90+ features via Hopsworks, Snowflake, and a Python SDK. Built a Snowflake native agent for natural-language data exploration." },
-    { name: "DeFi Smart Contract Data Pipeline", dates: "Feb 2025 – Jun 2025", tags: ["EVM Chains", "Morpho", "Rust", "Kafka", "BigQuery", "ClickHouse", "Dagster", "Kubernetes", "Helm", "Terraform"], url: "projects/defi-smart-contract-pipeline.md", desc: "Real-time smart contract event capture across all EVM chains via Rust WebSocket, streaming 5MB/s into Kafka, BigQuery, and ClickHouse; deployed to Kubernetes via Helm and Terraform." },
+    { name: "AI Infrastructure Platform for Furniture eCommerce", dates: "Mar 2026 – Present", tags: ["RAG", "pgvector", "Embedding Pipeline", "Model Serving", "Gemini / Vertex AI", "Pub/Sub", "GKE / GPU", "Postgres / Prisma", "Terraform", "Helm"], url: "projects/pacific-nook-gpt.md", desc: "Self-hosted AI infrastructure for a Shopify furniture retailer: pgvector-backed RAG on Neon Postgres, an async embedding pipeline on Pub/Sub, and a model-agnostic serving gateway fronting Vertex AI with a planned path to self-hosted vLLM on GKE. AI agents ship as thin clients on top." },
     { name: "Crypto Exchange Batch & Real-Time Pipeline", dates: "Nov 2025 – Mar 2026", tags: ["Rust", "Kafka", "StarRocks", "Dagster", "S3 Glacier", "EKS", "Grafana"], url: "projects/crypto-realtime-pipeline.md", desc: "High-throughput Rust ingestion publishing 300GB+/day to Kafka, with StarRocks on Kubernetes for real-time OLAP." },
     { name: "Kamino Solana Vault Curation", dates: "Oct 2025 – Dec 2025", tags: ["Solana", "DeFi", "TypeScript", "Bun", "Dagster", "GCP KMS"], url: "projects/kamino-solana-vault.md", desc: "Vault curation service on Kamino protocol managing $60M+ in assets." },
+    { name: "ML Feature Store for Quantitative Analytics", dates: "May 2025 – Aug 2025", tags: ["AI/ML", "Feature Store", "Snowflake Cortex", "Hopsworks", "Snowflake", "dbt", "Python"], url: "projects/ai-feature-store.md", desc: "Centralized ML feature store serving 90+ features via Hopsworks, Snowflake, and a Python SDK. Built a Snowflake native agent for natural-language data exploration." },
+    { name: "DeFi Smart Contract Data Pipeline", dates: "Feb 2025 – Jun 2025", tags: ["EVM Chains", "Morpho", "Rust", "Kafka", "BigQuery", "ClickHouse", "Dagster", "Kubernetes", "Helm", "Terraform"], url: "projects/defi-smart-contract-pipeline.md", desc: "Real-time smart contract event capture across all EVM chains via Rust WebSocket, streaming 5MB/s into Kafka, BigQuery, and ClickHouse; deployed to Kubernetes via Helm and Terraform." },
     { name: "Web3 Full Stack – RWA Lending Protocol", dates: "May 2024 – Jan 2025", tags: ["Solidity", "DeFi", "Multi-Chain", "Go", "Next.js", "WebSocket", "EKS"], url: "projects/rwa-lending-protocol.md", desc: "Decentralized lending protocol tokenizing real-world account receivables. ~$300K TVL." },
-    { name: "Crypto Tax Calculation Pipeline", dates: "Jan 2024 – Mar 2024", tags: ["Dagster", "Iceberg", "Redshift", "PostgreSQL", "S3", "Crypto"], url: "projects/crypto-tax-pipeline.md", desc: "Automated crypto tax platform with Dagster, Iceberg data lake, and FIFO/LIFO/HIFO cost-basis methods." },
     { name: "Crypto Market Surveillance ETL Pipeline", dates: "Jan 2024 – May 2024", tags: ["Airflow", "dbt", "Iceberg", "Redshift", "S3", "Crypto"], url: "projects/market-surveillance-pipeline.md", desc: "Compliance-focused ETL pipeline with Iceberg data lake and automated anomaly alerting." },
-    { name: "Autonomous Driving Data Pipeline", dates: "Dec 2021 – May 2022", tags: ["Autonomous Driving", "Spark Streaming", "Kafka", "Protobuf", "Kubernetes"], url: "projects/vehicle-data-pipeline.md", desc: "Near real-time pipeline converting Protobuf to Parquet at 10TB+/day. Spark Streaming migration reduced time by 70%." },
+    { name: "Crypto Tax Calculation Pipeline", dates: "Jan 2024 – Mar 2024", tags: ["Dagster", "Iceberg", "Redshift", "PostgreSQL", "S3", "Crypto"], url: "projects/crypto-tax-pipeline.md", desc: "Automated crypto tax platform with Dagster, Iceberg data lake, and FIFO/LIFO/HIFO cost-basis methods." },
+    { name: "Perception ML Training Data Platform — Autonomous Driving", dates: "Dec 2021 – May 2022", tags: ["ML Training Data", "Perception", "Spark Streaming", "Iceberg", "Kafka", "Protobuf", "Kubernetes"], url: "projects/vehicle-data-pipeline.md", desc: "ML training data infra: Protobuf sensor streams to ML-ready Parquet on Iceberg at 10TB+/day; Python SDK gave perception data scientists versioned datasets and self-service Spark on K8s." },
     { name: "Robotic Orchestrator", dates: "Nov 2019 – Feb 2021", tags: ["IoT", "AWS Lambda", "Greengrass", "MQTT", "AWS CDK"], url: "projects/robotic-orchestrator.md", desc: "Full-stack IoT app orchestrating warehouse AGVs via MQTT, Lambda, and Greengrass. Saved $500K/year per warehouse." }
   ];
 

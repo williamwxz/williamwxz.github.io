@@ -83,6 +83,16 @@ Self-hosted AI infrastructure for a Shopify-based furniture retailer. RAG on pgv
 - **Autoscaling:** HPA on QPS + queue depth; cluster autoscaler with min-replicas = 0 for off-hours.
 - **Workload Identity** for model-weight bucket + Secret Manager access — no static credentials.
 
+## Evaluation Pipeline
+
+Quality and cost visibility for everything flowing through the serving layer.
+
+- **Golden + regression datasets** — curated input/expected-output pairs per agent (portfolio analysis · retrieval · summarization), versioned in Postgres alongside the production prompts.
+- **LLM-as-judge offline eval** — `gemini-3.1-pro` scores model outputs against rubric criteria (faithfulness, relevance, structured-output validity); results land in an `eval_run` table for trend analysis.
+- **Retrieval eval** — recall@k / MRR over a hand-labeled RAG eval set; catches regressions when the embedding model, chunker, or ranker formula changes.
+- **Online sampling + drift tracking** — 1% of production traffic mirrored into an eval queue; per-week aggregates flag distribution drift in inputs and quality drift in outputs.
+- **Token + cost dashboard** — per-workload tokens-in / tokens-out / $-per-call rolled up from the serving layer's structured metrics; thresholds alert on cost regressions before they hit the bill.
+
 ## AI Agents
 
 Thin clients over the serving layer and RAG retriever.
@@ -109,5 +119,6 @@ Thin clients over the serving layer and RAG retriever.
 | API runtime | Node.js 20, TypeScript 5.3, Hono |
 | Data | Neon serverless Postgres, Prisma 5.22, pgvector |
 | Infra | GCP — GKE, Cloud Run, Helm, Terraform, NGINX ingress, cert-manager, Workload Identity |
-| Observability | Cloud Logging, structured token + latency metrics |
+| Evaluation | Golden + regression eval datasets, LLM-as-judge, retrieval recall@k / MRR, online sampling, drift tracking |
+| Observability | Cloud Logging, structured token + latency metrics, per-workload cost dashboard |
 | CI/CD | GitHub Actions, Neon preview branches per PR |
